@@ -794,6 +794,32 @@ header {
     text-decoration: none;
     overflow: hidden;
 }
+        .contact-map {
+    height: 300px;
+    background: var(--space-light);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    position: relative;
+}
+
+#yandex-map {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(30%) contrast(110%);
+    transition: filter 0.3s;
+}
+
+#yandex-map:hover {
+    filter: grayscale(0%) contrast(100%);
+}
+
+/* Для мобилок */
+@media (max-width: 768px) {
+    .contact-map {
+        height: 250px;
+    }
+}
 
         /* Responsive */
         @media (max-width: 1024px) {
