@@ -51,6 +51,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
+            width: 100%;
         }
 
         .section-title {
@@ -74,68 +75,67 @@
         }
 
         /* Header - Minimal с fullscreen меню */
-      /* Header - Minimal с fullscreen меню */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    background: transparent;
-    transition: all 0.3s;
-}
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: transparent;
+            transition: all 0.3s;
+        }
 
-.logo {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--white);
-    text-decoration: none;
-    letter-spacing: 4px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    z-index: 1003;
-}
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            z-index: 1003;
+        }
 
-.logo span {
-    color: var(--terracotta);
-}
+        .logo span {
+            color: var(--terracotta);
+        }
 
-.burger {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    cursor: pointer;
-    z-index: 1003;
-    padding: 10px;
-    background: rgba(0,0,0,0.2);
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-}
+        .burger {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            z-index: 1003;
+            padding: 10px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+        }
 
-.burger span {
-    width: 100%;
-    height: 2px;
-    background: var(--white);
-    transition: all 0.3s;
-}
+        .burger span {
+            width: 100%;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
 
-.burger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(8px, 8px);
-}
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
 
-.burger.active span:nth-child(2) {
-    opacity: 0;
-}
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-.burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(8px, -8px);
-}
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
 
         .fullscreen-menu {
             position: fixed;
@@ -177,17 +177,6 @@ header {
 
         .menu-links a:hover {
             color: var(--terracotta);
-        }
-
-        .menu-bg-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.1;
-            z-index: -1;
         }
 
         /* Hero - асимметричный */
@@ -548,30 +537,6 @@ header {
             color: var(--terracotta);
         }
 
-        .team-name:hover + .team-portrait {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .team-portrait {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.3s;
-            position: absolute;
-            left: 120px;
-            top: 0;
-        }
-
-        .team-portrait img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         .team-essay {
             color: var(--concrete);
             line-height: 1.8;
@@ -691,6 +656,12 @@ header {
             align-items: center;
             justify-content: center;
             border: 1px dashed rgba(255,255,255,0.2);
+            overflow: hidden;
+        }
+
+        #yandex-map-footer {
+            width: 100%;
+            height: 100%;
         }
 
         .newsletter {
@@ -773,123 +744,484 @@ header {
             opacity: 1;
             transform: rotate(0) scale(1);
         }
+
+        /* Исправление для иконок */
         .contact-social a i,
-.team-social a i,
-.footer-social a i,
-.social-icons a i,
-.footer-social a i {
-    line-height: 1;
-    
-    display: block;
-}
+        .team-social a i,
+        .footer-social a i,
+        .social-icons a i {
+            line-height: 1;
+            display: block;
+        }
 
-.contact-social a,
-.team-social a,
-.footer-social a,
-.social-icons a,
-.footer-social a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    overflow: hidden;
-}
-        .contact-map {
-    height: 300px;
-    background: var(--space-light);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--glass-border);
-    position: relative;
-}
+        .contact-social a,
+        .team-social a,
+        .footer-social a,
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            overflow: hidden;
+        }
 
-#yandex-map {
-    width: 100%;
-    height: 100%;
-    filter: grayscale(30%) contrast(110%);
-    transition: filter 0.3s;
-}
+        /* ===== АДАПТИВНОСТЬ ===== */
+        /* Desktop Large (1200px+) */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1400px;
+            }
+            
+            .polaroid-grid {
+                gap: 40px;
+            }
+        }
 
-#yandex-map:hover {
-    filter: grayscale(0%) contrast(100%);
-}
+        /* Desktop Medium (1025px - 1199px) */
+        @media (max-width: 1199px) and (min-width: 1025px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .hero h1 {
+                font-size: 5rem;
+            }
+            
+            .story-item {
+                gap: 40px;
+            }
+            
+            .story-image img {
+                height: 350px;
+            }
+        }
 
-/* Для мобилок */
-@media (max-width: 768px) {
-    .contact-map {
-        height: 250px;
-    }
-}
-
-        /* Responsive */
+        /* Tablet Landscape (768px - 1024px) */
         @media (max-width: 1024px) {
             .hero {
                 grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            
+            .hero-content {
+                padding: 120px 40px 40px;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                text-align: center;
+            }
+            
+            .hero-link {
+                float: none;
+                margin: 0 auto;
             }
             
             .hero-image {
-                height: 60vh;
+                height: 50vh;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .story-item {
+                flex-direction: column !important;
+                gap: 30px;
+            }
+            
+            .story-image {
+                width: 100%;
+            }
+            
+            .story-image img {
+                height: 300px;
+            }
+            
+            .team-member {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .team-name {
+                font-size: 2.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .newsletter {
+                grid-column: span 1;
             }
             
             .menu-links a {
                 font-size: 3rem;
             }
+        }
+
+        /* Mobile Large (481px - 767px) */
+        @media (max-width: 767px) and (min-width: 481px) {
+            .container {
+                padding: 0 30px;
+            }
             
-            .team-member {
-                grid-template-columns: 1fr;
+            header {
+                padding: 15px 30px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+            
+            .burger {
+                width: 40px;
+                height: 40px;
+                padding: 8px;
+                gap: 6px;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero h1 span {
+                font-size: 0.5em;
+                letter-spacing: 4px;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .polaroid-grid {
+                gap: 20px;
+            }
+            
+            .polaroid {
+                max-width: 240px;
+            }
+            
+            .polaroid:nth-child(2) {
+                margin-top: 20px;
+            }
+            
+            .polaroid img {
+                height: 180px;
+            }
+            
+            .menu-container {
+                padding: 40px 30px;
+            }
+            
+            .menu-category h3 {
+                font-size: 2rem;
+            }
+            
+            .signature-card {
+                min-width: 280px;
+                height: 380px;
+            }
+            
+            .story-image img {
+                height: 250px;
+            }
+            
+            .story-text h3 {
+                font-size: 2rem;
+            }
+            
+            .team-name {
+                font-size: 2rem;
+            }
+            
+            .hours-label {
+                font-size: 1.5rem;
+            }
+            
+            .hours-daily {
+                font-size: 1.2rem;
+                letter-spacing: 4px;
+            }
+            
+            .footer-map {
+                height: 180px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                max-width: 300px;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
             }
         }
 
-        /* Исправление для мобильной версии */
-@media (max-width: 768px) {
-    header {
-        padding: 15px 20px;
-    }
-    
-    .logo {
-        font-size: 1.5rem;
-        letter-spacing: 2px;
-    }
-    
-    .burger {
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        gap: 6px;
-    }
-    
-    .hero h1 {
-        font-size: 3rem;
-    }
-    
-    .hero h1 span {
-        font-size: 0.4em;
-        letter-spacing: 4px;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.2rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-}
-
-        /* Исправление иконок */
-        .footer-social a i,
-        .contact-social a i {
-            line-height: 1;
+        /* Mobile Small (320px - 480px) */
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 20px;
+            }
             
-            display: block;
+            .logo {
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+            
+            .burger {
+                width: 35px;
+                height: 35px;
+                padding: 6px;
+                gap: 5px;
+            }
+            
+            .burger span {
+                height: 2px;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-content {
+                padding: 100px 20px 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 span {
+                font-size: 0.4em;
+                letter-spacing: 3px;
+            }
+            
+            .hero-link {
+                font-size: 1rem;
+            }
+            
+            .hero-image {
+                height: 40vh;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
+            .section-title:before {
+                font-size: 1.5rem;
+                top: -15px;
+            }
+            
+            .polaroid-grid {
+                gap: 15px;
+            }
+            
+            .polaroid {
+                max-width: 100%;
+                padding: 10px 10px 20px 10px;
+            }
+            
+            .polaroid:nth-child(2) {
+                margin-top: 0;
+            }
+            
+            .polaroid img {
+                height: 150px;
+            }
+            
+            .polaroid-caption {
+                font-size: 0.9rem;
+            }
+            
+            .concept-title {
+                font-size: 3rem;
+                margin-bottom: -20px;
+            }
+            
+            .menu-container {
+                padding: 30px 20px;
+            }
+            
+            .menu-container:before {
+                display: none;
+            }
+            
+            .menu-category h3 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
+            .menu-item-name {
+                font-size: 1.1rem;
+            }
+            
+            .menu-item-price {
+                font-size: 1.1rem;
+            }
+            
+            .signature-title {
+                margin-left: 20px;
+            }
+            
+            .signature-card {
+                min-width: 240px;
+                height: 320px;
+            }
+            
+            .signature-info {
+                padding: 15px;
+            }
+            
+            .signature-info h4 {
+                font-size: 1.2rem;
+            }
+            
+            .scroll-hint {
+                padding-right: 20px;
+                font-size: 1rem;
+            }
+            
+            .story-image img {
+                height: 200px;
+            }
+            
+            .story-text h3 {
+                font-size: 1.8rem;
+            }
+            
+            .story-text p {
+                font-size: 0.9rem;
+            }
+            
+            .team-container {
+                padding: 0 10px;
+            }
+            
+            .team-name {
+                font-size: 1.8rem;
+            }
+            
+            .team-essay {
+                font-size: 0.9rem;
+                grid-column: 1;
+            }
+            
+            .team-essay:before {
+                font-size: 3rem;
+                top: -10px;
+                left: -15px;
+            }
+            
+            .hours-label {
+                font-size: 1.2rem;
+            }
+            
+            .hours-time {
+                font-size: 15vw;
+            }
+            
+            .hours-daily {
+                font-size: 1rem;
+                letter-spacing: 3px;
+            }
+            
+            footer {
+                padding: 40px 20px;
+            }
+            
+            .footer-contact h4 {
+                font-size: 1.3rem;
+            }
+            
+            .footer-contact p {
+                font-size: 0.9rem;
+            }
+            
+            .footer-social {
+                gap: 15px;
+            }
+            
+            .footer-social a {
+                font-size: 1.2rem;
+            }
+            
+            .footer-map {
+                height: 150px;
+            }
+            
+            .newsletter {
+                margin-top: 40px;
+                padding-top: 30px;
+            }
+            
+            .newsletter h4 {
+                font-size: 1.5rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                max-width: 250px;
+                gap: 10px;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) {
+            .polaroid:hover,
+            .signature-card:hover,
+            .story-image:hover img {
+                transform: none;
+            }
+            
+            .polaroid:hover {
+                transform: rotate(0deg) scale(1);
+                box-shadow: 10px 10px 0 rgba(27,59,43,0.1);
+            }
+        }
+
+        /* Поддержка старых браузеров */
+        @supports not (display: grid) {
+            .hero,
+            .story-item,
+            .team-member,
+            .footer-grid {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            
+            .hero-content,
+            .hero-image {
+                width: 100%;
+            }
+            
+            .story-image,
+            .story-text {
+                width: 100%;
+                margin: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header с fullscreen меню -->
-    <header>
+    <header id="header">
         <a href="#" class="logo">JUNGLE<span>.</span></a>
         <div class="burger" id="burger">
             <span></span>
@@ -899,7 +1231,6 @@ header {
     </header>
 
     <div class="fullscreen-menu" id="fullscreenMenu">
-        
         <div class="menu-links">
             <a href="#concept">Concept</a>
             <a href="#menu">Menu</a>
@@ -1131,9 +1462,9 @@ header {
                     <a href="#"><i class="fab fa-vk"></i></a>
                 </div>
             </div>
-           <div class="footer-map">
-    <div id="yandex-map-footer" style="width: 100%; height: 200px;"></div>
-</div>
+            <div class="footer-map">
+                <div id="yandex-map-footer"></div>
+            </div>
             <div class="newsletter">
                 <h4>хотите знать о новых сортах?</h4>
                 <div class="newsletter-form">
@@ -1152,6 +1483,12 @@ header {
         burger.addEventListener('click', () => {
             burger.classList.toggle('active');
             menu.classList.toggle('active');
+            
+            if (menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
 
         // Close menu on link click
@@ -1159,7 +1496,17 @@ header {
             link.addEventListener('click', () => {
                 burger.classList.remove('active');
                 menu.classList.remove('active');
+                document.body.style.overflow = '';
             });
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menu.classList.contains('active')) {
+                burger.classList.remove('active');
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
 
         // Animations on scroll
@@ -1171,7 +1518,7 @@ header {
                     entry.target.classList.add('visible');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
         animatedElements.forEach(el => observer.observe(el));
 
@@ -1206,62 +1553,85 @@ header {
             slider.scrollLeft = scrollLeft - walk;
         });
 
+        // Touch support for horizontal scroll
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!startX) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        slider.addEventListener('touchend', () => {
+            startX = null;
+        });
+
         // Form submission
         document.querySelector('.newsletter-form button').addEventListener('click', (e) => {
             e.preventDefault();
-            alert('Спасибо! Теперь вы будете знать о новых сортах первыми.');
+            const email = document.querySelector('.newsletter-form input').value;
+            if (email) {
+                alert('Спасибо! Теперь вы будете знать о новых сортах первыми.');
+                document.querySelector('.newsletter-form input').value = '';
+            } else {
+                alert('Пожалуйста, введите email');
+            }
         });
 
-      // Header scroll effect
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    const logo = document.querySelector('.logo');
-    const burger = document.querySelector('.burger');
-    
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(27, 59, 43, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
-        header.style.padding = '15px 40px';
-        burger.style.background = 'rgba(255,255,255,0.1)';
-    } else {
-        header.style.background = 'transparent';
-        header.style.backdropFilter = 'none';
-        header.style.padding = '20px 40px';
-        burger.style.background = 'rgba(0,0,0,0.2)';
-    }
-});
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const burger = document.querySelector('.burger');
+            
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(27, 59, 43, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.padding = '15px 40px';
+                burger.style.background = 'rgba(255,255,255,0.1)';
+            } else {
+                header.style.background = 'transparent';
+                header.style.backdropFilter = 'none';
+                header.style.padding = '20px 40px';
+                burger.style.background = 'rgba(0,0,0,0.2)';
+            }
+        });
 
-// Адаптация для мобилок в скролле
-const mediaQuery = window.matchMedia('(max-width: 768px)');
-if (mediaQuery.matches) {
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.padding = '15px 20px';
-        } else {
-            header.style.padding = '15px 20px';
-        }
-    });
-}
-        // Smooth scroll
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
             });
         });
+
+        // Fix for iOS 100vh issue
+        const setVh = () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        };
+        
+        window.addEventListener('resize', setVh);
+        setVh();
     </script>
+    
+    <!-- Яндекс Карты -->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш-ключ-если-нужен&lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript">
         ymaps.ready(initFooterMap);
+        
         function initFooterMap() {
             var myMap = new ymaps.Map("yandex-map-footer", {
-                center: [55.765833, 37.607222], // Координаты Тверской, 15
+                center: [55.765833, 37.607222],
                 zoom: 15,
                 controls: ['zoomControl']
             });
@@ -1270,14 +1640,19 @@ if (mediaQuery.matches) {
                 hintContent: 'JUNGLE coffee',
                 balloonContent: 'ул. Тверская, 15'
             }, {
-                preset: 'islands#greenIcon', // Зеленая иконка под цвет сайта
+                preset: 'islands#greenIcon',
                 iconColor: '#1B3B2B'
             });
             
             myMap.geoObjects.add(myPlacemark);
-            
-            // Отключаем скролл колесиком на карте (чтобы не мешал скроллу страницы)
             myMap.behaviors.disable('scrollZoom');
+            
+            // Адаптация карты при изменении размера окна
+            window.addEventListener('resize', () => {
+                setTimeout(() => {
+                    myMap.container.fitToViewport();
+                }, 100);
+            });
         }
     </script>
 </body>
